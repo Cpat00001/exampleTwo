@@ -1,0 +1,71 @@
+/*
+Theme Name: exampleTwo
+Author: Pat
+*/
+/* general page css */
+#body {
+  max-width: 1199px;
+  margin: auto;
+}
+
+/* Header */
+#header_one {
+  background-color: rgb(173, 166, 166);
+  color: black;
+  min-height: 100px;
+  height: auto;
+  box-shadow: 2px 2px 20px 5px rgb(218, 214, 215);
+  padding: 10px;
+  margin-bottom: 2%;
+}
+.menu {
+  float: left;
+  padding: 10px;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  display: inline;
+}
+a {
+  color: white;
+  font-size: 15px;
+  font-weight: 900;
+}
+a:hover {
+  color: orange;
+  font-weight: 900;
+  text-decoration: none;
+}
+/* front page */
+#fp_div1 {
+  min-height: 400px;
+}
+#fp_div1_left {
+  background-color: rgb(82, 110, 163);
+  min-height: 400px;
+}
+#fp_div1_right {
+  background-color: rgb(170, 92, 107);
+  min-height: 400px;
+}
+
+/* footer */
+#footer_one {
+  margin-top: 2%;
+  min-height: 100px;
+}
+#footer_left {
+  background-color: grey;
+  color: white;
+}
+#footer_right {
+  background-color: rgb(189, 171, 171);
+  color: white;
+}
+/* 404 page - if url does not exists */
+#page404 {
+  min-height: 400px;
+  background-color: grey;
+}
