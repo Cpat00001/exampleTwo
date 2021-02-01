@@ -63,9 +63,32 @@ a:hover {
 #footer_right {
   background-color: rgb(189, 171, 171);
   color: white;
+  padding: 10px;
+}
+#contact_div {
+  height: auto;
+  padding: 10px;
+  background-color: rgb(116, 111, 189);
+  color: white;
+  margin-top: 2%;
+  display: none;
 }
 /* 404 page - if url does not exists */
 #page404 {
   min-height: 400px;
   background-color: grey;
+}
+/* page */
+.page_container {
+  min-height: 400px;
+  background-color: lavender;
+}
+/* archive */
+.archive_container {
+  min-height: 400px;
+  background-color: rgb(163, 107, 117);
+}
+/* link to posts */
+#post_link {
+  color: black;
 }

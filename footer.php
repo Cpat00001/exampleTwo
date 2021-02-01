@@ -1,7 +1,13 @@
 <div class="container">
         <div class="row" id="footer_one">
             <div class="col col-sm-4" id="footer_left"><h2>Footer</h2></div>
-            <div class="col col-sm-8" id="footer_right"><h5></h5>Contact detail</h5></div>
+            <div class="col col-sm-8" id="footer_right">
+            <button type="button" class="btn btn-danger" id="contact_button">Check our email and mobile</button>
+            <div id="contact_div">
+                <h5>email: abc@gmail.com</h5>
+                <h5>mobile: 123-456-789</h5>
+            </div>
+            </div>
         </div>
     
 </div>

@@ -3,7 +3,6 @@
 function add_exampletwo_theme_scripts(){
     //wp_register_style();
     wp_enqueue_style( 'slider', get_template_directory_uri() . '/style.css',false,'1.1','all');
-    wp_enqueue_script('custom_js',get_template_directory_uri().'js/scriptone.js',array('jquery'),1,true);
 }
 add_action('wp_enqueue_scripts','add_exampletwo_theme_scripts');
 
@@ -13,6 +12,11 @@ function register_header_menu(){
 }
 add_action('init','register_header_menu');
 
+// add JS contact details animation to footer
+function contact_details_animation(){
+    wp_enqueue_script( 'script', get_template_directory_uri() . '/js/contact_details.js', array ( 'jquery' ), 1, true);
+}
+add_action('wp_enqueue_scripts','contact_details_animation');
 
 
 ?>
