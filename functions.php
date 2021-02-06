@@ -18,5 +18,13 @@ function contact_details_animation(){
 }
 add_action('wp_enqueue_scripts','contact_details_animation');
 
-
+// create a shortcode to be able to add variables in worpdress pages
+function show_credentials(){
+    global $wpdb; 
+    global $xyz;
+    wp_json_encode(var_dump($xyz));
+    //$value = $wpdb->get_var($wpdb->prepare("SELECT username,email FROM {$wpdb->prefix}registered WHERE id = %d" , $email));
+    //var_dump($value);
+}
+add_shortcode('show_userdata','show_credentials');
 ?>
