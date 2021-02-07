@@ -2,6 +2,19 @@
 // start session to get data from registration form
 session_start();
 
+//if registration email is taken fire action to use javascript message in registration page
+$result = $_SESSION['email_exists'];
+//var_dump($result);
+function show_registered_email_banner($result){
+    if($result){
+        echo "EMAIL REGISTERED";
+        wp_enqueue_script('show_banner', get_template_directory_uri() .'/js/show_banner.js',1,false);
+    }else{
+        echo "NOT REGISTERED";
+    }
+}
+add_action('wp_enqueue_scripts','show_registered_email_banner');
+
 function add_exampletwo_theme_scripts(){
     //wp_register_style();
     wp_enqueue_style( 'slider', get_template_directory_uri() . '/style.css',false,'1.1','all');
@@ -25,13 +38,13 @@ function show_credentials(){
     global $wpdb; 
     
     $session_email = $_SESSION['registered_email'];
-    //wp_json_encode(var_dump($xyz));
     // $registered_user = $wpdb->get_var($wpdb->prepare("SELECT username,email FROM {$wpdb->prefix}registered WHERE email = %s" , $session_email));
     $query  = $wpdb->prepare( "SELECT email,username FROM {$wpdb->prefix}registered WHERE email = %s", $session_email );
     $results = $wpdb->get_results( $query );
 
     //var_dump($session_email);
-    print_r($results[0]->{'email'});
+    echo "<h5>Thank you. You have been registered with email: " . ($results[0]->{'email'}) . "</h5>";
+    echo "<a href=''><button type='button' class='btn btn-success'>Login</button></a>";
 }
 add_shortcode('show_userdata','show_credentials');
 ?>
