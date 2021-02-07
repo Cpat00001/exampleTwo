@@ -1,4 +1,6 @@
 <?php
+// start session to get data from registration form
+session_start();
 
 function add_exampletwo_theme_scripts(){
     //wp_register_style();
@@ -21,10 +23,15 @@ add_action('wp_enqueue_scripts','contact_details_animation');
 // create a shortcode to be able to add variables in worpdress pages
 function show_credentials(){
     global $wpdb; 
-    global $xyz;
-    wp_json_encode(var_dump($xyz));
-    //$value = $wpdb->get_var($wpdb->prepare("SELECT username,email FROM {$wpdb->prefix}registered WHERE id = %d" , $email));
-    //var_dump($value);
+    
+    $session_email = $_SESSION['registered_email'];
+    //wp_json_encode(var_dump($xyz));
+    // $registered_user = $wpdb->get_var($wpdb->prepare("SELECT username,email FROM {$wpdb->prefix}registered WHERE email = %s" , $session_email));
+    $query  = $wpdb->prepare( "SELECT email,username FROM {$wpdb->prefix}registered WHERE email = %s", $session_email );
+    $results = $wpdb->get_results( $query );
+
+    //var_dump($session_email);
+    print_r($results[0]->{'email'});
 }
 add_shortcode('show_userdata','show_credentials');
 ?>
