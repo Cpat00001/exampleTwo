@@ -1,6 +1,6 @@
 <?php
 // start session
-session_start();
+//session_start();
 
 $path = preg_replace('/wp-content.*$/','',__DIR__);
 
@@ -19,11 +19,10 @@ if(isset($_POST['register_submit'])){
     // check if submitted email is already registered
     $query  = $wpdb->prepare( "SELECT email,username FROM {$wpdb->prefix}registered WHERE email = %s", $xyz );
     $result = $wpdb->get_results( $query );
-    // var_dump($result);
+    //var_dump($result);
     if($result){
-        //echo "SORRY User exists with this email";
-        $_SESSION['email_exists'] = $result;
-        //var_dump($_SESSION['email_exists']);
+        echo "SORRY User exists with this email </br>";
+        echo "<a href='http://localhost/exampleTwo/register/'><button type='button' class='btn btn-dark'>Try again</button></a>";
         //wp_redirect('http://localhost/exampleTwo/register');
     }else{
     //insert user data to DB table

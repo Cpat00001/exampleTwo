@@ -3,17 +3,15 @@
 session_start();
 
 //if registration email is taken fire action to use javascript message in registration page
-$result = $_SESSION['email_exists'];
-//var_dump($result);
-function show_registered_email_banner($result){
-    if($result){
-        echo "EMAIL REGISTERED";
-        wp_enqueue_script('show_banner', get_template_directory_uri() .'/js/show_banner.js',1,false);
-    }else{
-        echo "NOT REGISTERED";
-    }
-}
-add_action('wp_enqueue_scripts','show_registered_email_banner');
+// $result = $_SESSION['email_exists'];
+// var_dump($result);
+
+// if(!isset($_SESSION['email_exists'])){
+//     remove_action('wp_enqueue_scripts','show_registered_email_banner'); 
+// }else{
+//     wp_enqueue_script('show_banner', get_template_directory_uri() .'/js/show_banner.js',1,false);
+// }
+//add_action('wp_enqueue_scripts','show_registered_email_banner');
 
 function add_exampletwo_theme_scripts(){
     //wp_register_style();
