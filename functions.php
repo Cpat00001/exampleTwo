@@ -42,7 +42,7 @@ function show_credentials(){
 
     //var_dump($session_email);
     echo "<h5>Thank you. You have been registered with email: " . ($results[0]->{'email'}) . "</h5>";
-    echo "<a href=''><button type='button' class='btn btn-success'>Login</button></a>";
+    echo "<a href='..\..\plugins\login\login_form.php'><button type='button' class='btn btn-success'>Login</button></a>";
 }
 add_shortcode('show_userdata','show_credentials');
 ?>
