@@ -9,23 +9,6 @@ Description: simply form to login new user
 
 function add_login_form(){
 
-    // $content = '';
-    
-    // $content .= '<form method="post" action="'. plugin_dir_url(__FILE__).'/process_login">';
-    // $content .= '<div class="form-group">';
-    // $content .= '<label for="loginemail">Email address</label>';
-    // $content .= '<input type="text" name="login_email" class="form-control" id="loginemail" aria-describedby="emailHelp" placeholder="Enter email">';
-    // $content .= '<small id="emailHelp" class="form-text text-muted">Use your email from registration process</small>';
-    // $content .= '</div>';
-    // $content .= ' <div class="form-group">';
-    // $content .= '<label for="loginPassword">Password</label>';
-    // $content .= '<input type="text" class="form-control" name="login_password" id="username_registration" placeholder="Enter username">';
-    // $content .= '</div>';
-    // $content .= '<button type="submit" class="btn btn-primary" name="login_submit">Register</button>';
-    // $content .= '</form>';
-
-    // return $content;
-
     $content = '';
 
     $content .= '<form method="post" action="'.plugin_dir_url(__FILE__).'process_login/">';

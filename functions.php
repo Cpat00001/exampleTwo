@@ -45,4 +45,5 @@ function show_credentials(){
     echo "<a href='..\..\plugins\login\login_form.php'><button type='button' class='btn btn-success'>Login</button></a>";
 }
 add_shortcode('show_userdata','show_credentials');
+
 ?>
