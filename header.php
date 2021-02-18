@@ -1,3 +1,8 @@
+<?php
+// start session
+//session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +20,20 @@
             <a href="<?php echo get_home_url();?>"><h1>Logo IMG</h1></a>
         </div>
         <div class="col-6 container d-flex justify-content-end align-items-center">
-            <?php wp_nav_menu(array('theme_location' => 'header_menu')); ?>
+            <?php
+            // tymczasowo zawieszam - testuje warunkowe wyswietlanie menu 
+            // wp_nav_menu(array('theme_location' => 'header_menu')); 
+            ?>
+
+            <!-- add conditonally displaying Menu -->
+            <?php
+            if(!isset($_SESSION['user_id'])){
+                wp_nav_menu(array('theme_location' => 'header_menu'));
+            }else{
+                wp_nav_menu(array('theme_location' => 'zalogowany'));
+            }
+
+            ?>
         </div>
     </div>
     
