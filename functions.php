@@ -2,6 +2,25 @@
 // start session to get data from registration form
 session_start();
 
+//check if session exists
+function check_session(){
+    if(!isset($_SESSION['user_id']) && is_page(array('secret-info'))){
+        $output = '';
+        $output .= print_r("<h5>you dont have a session,you will be redirectected shortly</h5>");
+        //user doesnt have a session -> redirect to login page
+        //header("Location: http://localhost/exampleTwo/login/");
+        wp_redirect('http://localhost/exampleTwo/login/');
+        return $output;
+    }else{
+      
+        $output = '';
+        $output .= print_r("you have your session");
+        
+        return $output;
+    }
+}
+add_shortcode('session_checker','check_session');
+
 //if registration email is taken fire action to use javascript message in registration page
 // $result = $_SESSION['email_exists'];
 // var_dump($result);
