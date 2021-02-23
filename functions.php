@@ -2,14 +2,20 @@
 // start session to get data from registration form
 session_start();
 
+
 //check if session exists
 function check_session(){
-    if(!isset($_SESSION['user_id']) && is_page(array('secret-info'))){
+    if(!isset($_SESSION['user_id'])){
         $output = '';
-        $output .= print_r("<h5>you dont have a session,you will be redirectected shortly</h5>");
+        $output .= print_r("<h5>NOT ALLOWED without a session,you will be redirectected shortly</h5>");
         //user doesnt have a session -> redirect to login page
-        //header("Location: http://localhost/exampleTwo/login/");
-        wp_redirect('http://localhost/exampleTwo/login/');
+        //header("Location: https://localhost/exampleTwo/login/");
+        //wp_redirect('https://localhost/exampleTwo/login/');
+        ?>
+        <script type="text/javascript">
+            window.location = "https://localhost/exampleTwo/login/";
+        </script>
+        <?php
         return $output;
     }else{
       
@@ -64,5 +70,10 @@ function show_credentials(){
     echo "<a href='..\..\plugins\login\login_form.php'><button type='button' class='btn btn-success'>Login</button></a>";
 }
 add_shortcode('show_userdata','show_credentials');
+
+//zamiast start_session();
+//add_action('init','check_session');
+
+// add_action( 'init', 'redirect_visitors' );
 
 ?>

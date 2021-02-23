@@ -44,11 +44,10 @@ if(isset($_POST['login_submit']) && !empty($_POST['user_email']) && !empty($_POS
                 //header("Location: http://localhost/exampleTwo/login/");
                 echo "<h1>WRONG USERNAME or PASSWORD</h1>";
             }else{
-                //echo "<h1>THE SAME USER SUBMITTED - WELCOME</h1>";
                 //var_dump($registered_username_id);
                 // give loggedIn user a session ID 
                 $_SESSION['user_id'] = $registered_username_id;
-                header("Location: http://localhost/exampleTwo/loggedin/");
+                header("Location: https://localhost/exampleTwo/loggedin/");
             }
         }
     }

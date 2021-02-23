@@ -12,7 +12,7 @@ function check_session(){
         // $output = '';
         // $output .= print_r("you dont have a session,you will be redirectected shortly");
         //user doesnt have a session -> redirect to login page
-        header("Location: http://localhost/exampleTwo/login/");
+        header("Location: https://localhost/exampleTwo/login/");
         // return $output;
     }else{
       
