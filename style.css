@@ -92,3 +92,15 @@ a:hover {
 #post_link {
   color: black;
 }
+
+/* styling internal pages */
+/* loggedin page */
+#logged_left1 {
+  background-color: rgb(185, 137, 230);
+}
+#logged_right1 {
+  background-color: rgb(142, 126, 156);
+}
+#hidden_list {
+  color: crimson;
+}
