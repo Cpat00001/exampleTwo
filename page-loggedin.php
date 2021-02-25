@@ -44,10 +44,13 @@ global $wpdb;
             //var_dump($results);
 
             foreach($results as $row){
+                $u = $row->username;
+                //var_dump($u);
+                //$us = get_query_var('username');
+                var_dump($us);
                 echo "<ul>";
-                echo "<li><a href='. $row->username.' >". $row->username. "</li></a>";
+                echo "<li><a href='https://localhost/exampleTwo/user-profile/$u' >". $row->username. "</li></a>";
                 echo "</ul>";
-
             }
 
             ?>

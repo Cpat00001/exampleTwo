@@ -71,8 +71,29 @@ function show_credentials(){
 }
 add_shortcode('show_userdata','show_credentials');
 
-//zamiast start_session();
-//add_action('init','check_session');
+//force to login if not loggedIn and post category === 'hidden'
 
-// add_action( 'init', 'redirect_visitors' );
+function check_post_category(){
+    $cat = get_the_category();
+    if(!empty($cat)){
+        $category =  esc_html($cat[0]->name);
+        //var_dump($cat);
+        if(($category === 'hidden') && (!isset($_SESSION['user_id']))){
+            //echo "HIDDEN POST -> redirect";
+            ?>
+            <script type="text/javascript">
+                window.location = "https://localhost/exampleTwo/login/";
+            </script>
+            <?php
+        }
+    }
+    
+}
+add_shortcode('check_cat','check_post_category');
+//add file to show registered user data
+require_once 'registereduser.php';
+
+// redirect to user page
+
+
 ?>
