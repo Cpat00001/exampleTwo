@@ -94,6 +94,10 @@ add_shortcode('check_cat','check_post_category');
 require_once 'registereduser.php';
 
 // redirect to user page
+// if(isset($_SERVER['HTTP_REFERER'])){
+//         echo "<h1>".$_SERVER['HTTP_REFERER']."</h1>";
+// }
+
 
 
 ?>
