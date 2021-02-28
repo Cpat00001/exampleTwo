@@ -12,8 +12,16 @@
                 <?php
                 endwhile;
             endif;
+    // include 'comments.php';
+        if(comments_open() || get_comments_number()){
+            comments_template('/comments.php');
+        }
     ?>
-    
+    <div class="alert alert-secondary" role="alert" id="tags">
+        <?php
+            the_tags('Tags: ');
+        ?>
+    </div>
 </div>
 
 <?php get_footer(); ?>

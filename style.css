@@ -104,3 +104,14 @@ a:hover {
 #hidden_list {
   color: crimson;
 }
+/* comments */
+.url {
+  color: black;
+}
+.commentmetadata a {
+  color: black;
+}
+/* tags */
+#tags a {
+  color: black;
+}

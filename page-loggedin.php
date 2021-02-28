@@ -46,13 +46,13 @@ foreach ($results as $row) {
     global $u;
     $u = $row->username;
     $_SESSION['regusername'] = $u;
-    var_dump($u);
+    //var_dump($u);
     //$us = get_query_var('username');
     //var_dump($us);
     echo "<ul>";
     // echo "<li><a href='https://localhost/exampleTwo/user-profile/$u' id='link' onclick='showUser()'>" . $row->username . "</li></a>";
     echo "<li><a href='https://localhost/exampleTwo/user-profile/' id='link' name='$u' onclick='showUser();'>" . $row->username . "</li></a>";
-    echo "<h5>".$_SESSION['regusername']."</h5>";
+    //echo "<h5>".$_SESSION['regusername']."</h5>";
     echo "</ul>";
     ?>
     <script type="text/javascript">
