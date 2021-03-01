@@ -115,3 +115,14 @@ a:hover {
 #tags a {
   color: black;
 }
+/* woocommerce */
+.woocommerce nav.woocommerce-pagination ul li a {
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+}
+/* checkout fields */
+.woocommerce-input-wrapper {
+  width: 100%;
+  display: block;
+}

@@ -15,8 +15,4 @@ function display_user_data(){
 }
 add_shortcode('registered_user_details','display_user_data');
 ?>
-<h2 id="result"></h2>
-<script>
-    document.getElementById("result").innerHTML = sessionStorage.getItem("reguser");
-    sessionStorage.clear();
-</script>
+

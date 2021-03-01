@@ -45,37 +45,10 @@ $results = $wpdb->get_results("SELECT username FROM {$wpdb->prefix}registered");
 foreach ($results as $row) {
     global $u;
     $u = $row->username;
-    $_SESSION['regusername'] = $u;
-    //var_dump($u);
-    //$us = get_query_var('username');
-    //var_dump($us);
     echo "<ul>";
     // echo "<li><a href='https://localhost/exampleTwo/user-profile/$u' id='link' onclick='showUser()'>" . $row->username . "</li></a>";
-    echo "<li><a href='https://localhost/exampleTwo/user-profile/' id='link' name='$u' onclick='showUser();'>" . $row->username . "</li></a>";
-    //echo "<h5>".$_SESSION['regusername']."</h5>";
+    echo "<li>" . $row->username . "</li>";
     echo "</ul>";
-    ?>
-    <script type="text/javascript">
-        function showUser(e){
-            //e.preventDefault();
-            const out = document.getElementById('link').name;
-            console.log(out);
-            sessionStorage.setItem("reguser", out);
-
-            console.log(e)
-            const lin = document.getElementById('link').href;
-            alert(typeof(lin) + " " + lin);
-            if(lin !== 'https://localhost/exampleTwo/user-profile'){
-                window.location = 'https://localhost/exampleTwo/user-profile/';
-                console.log('TRUE');
-                return false;
-            }else{
-                console.log('FALSE');
-            }
-
-        }
-    </script> 
-    <?php
 }
 ?>
         </div>
